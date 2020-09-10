@@ -49,7 +49,8 @@ todolist.addEventListener('submit', event => {
   // clears input field for another task , so user doesnt have to clear it manually
   newTaskField.focus();
   // Adds focus to input after user enters a new task (blinking cursor)
-  // Sanitize the innerHTML
+
+  // Sanitize innerHTML
   taskElement.innerHTML = DOMPurify.sanitize(`
 <input type="checkbox" id="task" />
 <label for="task"> ... </label>
@@ -64,6 +65,8 @@ todolist.addEventListener('submit', event => {
     Math.random()
       .toString(36)
       .substring(2, 2 + length);
+
+      console.log(Math.random());
 
   const uniqueID = generateUniqueString(10);
   taskElement.classList.add('task');
