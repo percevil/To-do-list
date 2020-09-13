@@ -66,16 +66,21 @@ todolist.addEventListener('submit', event => {
       .toString(36)
       .substring(2, 2 + length);
 
-      console.log(Math.random());
+  console.log(Math.random());
 
   const uniqueID = generateUniqueString(10);
   taskElement.classList.add('task');
   taskElement.innerHTML = DOMPurify.sanitize(`
   <input type="checkbox" id="${uniqueID}" />
-  <label for="${uniqueID}"> ... </label>
+  <label for="${uniqueID}"> <svg viewBox="0 0 20 15">
+  <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
+    </svg> </label>
   <span class="task__name">${inputValue}</span>
   <button type="button" class="task__delete-button">
-    <svg viewBox="0 0 20 20"> ... </svg>
+  <svg viewBox="0 0 20 20">
+  <path
+    d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/>
+  </svg>
   </button>
   `);
 });
